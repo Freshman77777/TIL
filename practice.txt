@@ -1,3 +1,7 @@
 login text 1
 master -2
+<<<<<<< HEAD
 conflict
+=======
+master-3
+>>>>>>> hotfix
