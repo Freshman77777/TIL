@@ -10,7 +10,7 @@ public class DimmingLights extends Lighting {
 	
 	public void setBright(double bright) {
 		this._bright = bright;
-		System.out.println(this._id + " �넂 DimmingLights bright : "+bright);
+		System.out.println(this._id + " -> DimmingLights bright : "+bright);
 	}
 
 }
