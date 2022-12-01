@@ -1,58 +1,57 @@
 package MyApp;
 
-public class AccountingClassApp {
-
-	public static void main(String[] args) {
-//		
-//		System.out.println("Value of supply:" + 10000.0);
-//		System.out.println("VAT :" + (10000.0*0.1));
-//		System.out.println("Total :" + (10000.0 + 10000.0*0.1));
-//		System.out.println("Expense :" + (10000.0*0.3));
-//		System.out.println("Income :" + (10000.0 - 10000.0*0.3));
-//		System.out.println("Dividend :" + (10000.0 - 10000.0*0.3) * 0.5);
-//		System.out.println("Dividend :" + (10000.0 - 10000.0*0.3) * 0.3);
-//		System.out.println("Dividend :" + (10000.0 - 10000.0*0.3) * 0.2);
-		
-//		double valueOfSupply = 10000.0;
-//        double vatRate = 0.1;
-//        double expenseRate = 0.3;
-//        double vat = valueOfSupply * vatRate;
-//        double total = valueOfSupply + vat;
-//        double expense = valueOfSupply * expenseRate;
-//        double income = valueOfSupply - expense;
-//        double dividend1 = income * 0.5;
-//        double dividend2 = income * 0.3;
-//        double dividend3 = income * 0.2;
-// 
-//        System.out.println("Value of supply : " + valueOfSupply);
-//        System.out.println("VAT : " + vat);
-//        System.out.println("Total : " + total);
-//        System.out.println("Expense : " + expense);
-//        System.out.println("Income : " + income);
-//        System.out.println("Dividend 1 : " + dividend1);
-//        System.out.println("Dividend 2 : " + dividend2);
-//        System.out.println("Dividend 3 : " + dividend3);
-        
-        double valueOfSupply = Double.parseDouble(args[0]);
-        double vatRate = 0.1;
-        double expenseRate = 0.3;
-        double vat = valueOfSupply * vatRate;
-        double total = valueOfSupply + vat;
-        double expense = valueOfSupply * expenseRate;
-        double income = valueOfSupply - expense;
-        double dividend1 = income * 0.5;
-        double dividend2 = income * 0.3;
-        double dividend3 = income * 0.2;
- 
+class Accounting{
+    public static double valueOfSupply;
+    public static double vatRate;
+    public static double expenseRate;
+    public static void print() {
         System.out.println("Value of supply : " + valueOfSupply);
-        System.out.println("VAT : " + vat);
-        System.out.println("Total : " + total);
-        System.out.println("Expense : " + expense);
-        System.out.println("Income : " + income);
-        System.out.println("Dividend 1 : " + dividend1);
-        System.out.println("Dividend 2 : " + dividend2);
-        System.out.println("Dividend 3 : " + dividend3);
-
-	}
-
+        System.out.println("VAT : " + getVAT());
+        System.out.println("Total : " + getTotal());
+        System.out.println("Expense : " + getExpense());
+        System.out.println("Income : " + getIncome());
+        System.out.println("Dividend 1 : " + getDiviend1());
+        System.out.println("Dividend 2 : " + getDiviend2());
+        System.out.println("Dividend 3 : " + getDiviend3());
+    }
+ 
+    public static double getDiviend1() {
+        return getIncome() * 0.5;
+    }
+    public static double getDiviend2() {
+        return getIncome() * 0.3;
+    }
+    public static double getDiviend3() {
+        return getIncome() * 0.2;
+    }
+ 
+    public static double getIncome() {
+        return valueOfSupply - getExpense();
+    }
+ 
+    public static double getExpense() {
+        return valueOfSupply * expenseRate;
+    }
+ 
+    public static double getTotal() {
+        return valueOfSupply + getVAT();
+    } 
+ 
+    public static double getVAT() {
+        return valueOfSupply * vatRate;
+    }
+}
+public class AccountingClassApp {
+     
+    public static void main(String[] args) {
+        Accounting.valueOfSupply = 10000.0;
+        Accounting.vatRate = 0.1;
+        Accounting.expenseRate = 0.3;
+        Accounting.print();
+        // anotherVariable = ...;
+        // anotherMethod = ...;
+    }
+ 
+     
+ 
 }

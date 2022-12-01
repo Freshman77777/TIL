@@ -1,4 +1,5 @@
 package MyApp;
+
 public class AccountingMethodApp {
     public static double valueOfSupply;
     public static double vatRate;
